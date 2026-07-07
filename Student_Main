@@ -1,68 +1,109 @@
+import java.util
 public class Student_Main {
+    String[] students;
+
     public static void main(String[] args) {
-        Student student = new Student();
     }
 }
 
 public class Student {
     private int studentID;
-    private String firstname;
-    private String lastname;
+    private String firstName;
+    private String lastName;
     private String email;
     private int age;
-    private int[3] scores;
+    private int[] grades = new int[3];
 
-    // getters
+    public Student(int studentID, String firstName, String lastName, String email, int age, int[] grades) {
+        this.studentID = studentID;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.age = age;
+        this.grades = grades;
+    }
+
+
     public int getStudentID() {
         System.out.println(studentID);
     }
 
-    public String getFirstname() {
-        System.out.println(firstname);
-    }
-
-    public String getLastname() {
-        System.out.println(lastname);
-    }
-
-    public String getEmail() {
-        System.out.println(email);
-    }
-
-    public int getAge() {
-        System.out.println(age);
-    }
-
-    public int[] getScores() {
-        System.out.println(scores);
-    }
-
-    // setters
     public void setStudentID(int newStudentID) {
         this.studentID = studentID;
+    }
+
+    public String getFirstName() {
+        System.out.println(firstName);
     }
 
     public void setFirstname(String newFirstname) {
         this.firstname = newFirstname;
     }
 
+    public String getLastName() {
+        System.out.println(lastName);
+    }
+
     public void setLastname(String newLastname) {
         this.lastname = newLastname;
     }
 
-    public void setAge(int newAge) {
-        this.age = newAge;
+    public String getEmail() {
+        System.out.println(email);
     }
 
     public void setEmail(String newEmail) {
         this.email = newEmail;
     }
 
-    public void setScores(int[], newScores) {
-        this.scores = newScores;
+    public int getAge() {
+        System.out.println(age);
+    }
+
+    public void setAge(int newAge) {
+        this.age = newAge;
+    }
+
+    public int[] getGrades() {
+        System.out.println(grades);
+    }
+
+    public void setGrades(int[] newGrades) {
+        this.grades = newGrades;
+    }
+
+    public void print() {
+
     }
 }
 
 public class Student_Roster {
-    
+    private ArrayList<Student> classRoster = new ArrayList<>();
+
+    Student s = new Student();
+
+    public void add(String studentID, String firstname, String lastname, String email, int age, int grade1, int grade2, int grade3) {
+        s.setStudentID(studentID);
+        s.setFirstname(firstname);
+        s.setLastname(lastname);
+        s.setEmail(email);
+        s.setAge(age);
+        s.setScores(grade1, grade2, grade3);
+    }
+
+    public void remove(String studentID) {
+
+    }
+
+    public void print_all() {
+
+    }
+
+    public void print_average_grade(String s) {
+
+    }
+
+    public void print_invalid_emails() {
+
+    }
 }
