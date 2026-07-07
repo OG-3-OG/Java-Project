@@ -1,0 +1,68 @@
+public class Student_Main {
+    public static void main(String[] args) {
+        Student student = new Student();
+    }
+}
+
+public class Student {
+    private int studentID;
+    private String firstname;
+    private String lastname;
+    private String email;
+    private int age;
+    private int[3] scores;
+
+    // getters
+    public int getStudentID() {
+        System.out.println(studentID);
+    }
+
+    public String getFirstname() {
+        System.out.println(firstname);
+    }
+
+    public String getLastname() {
+        System.out.println(lastname);
+    }
+
+    public String getEmail() {
+        System.out.println(email);
+    }
+
+    public int getAge() {
+        System.out.println(age);
+    }
+
+    public int[] getScores() {
+        System.out.println(scores);
+    }
+
+    // setters
+    public void setStudentID(int newStudentID) {
+        this.studentID = studentID;
+    }
+
+    public void setFirstname(String newFirstname) {
+        this.firstname = newFirstname;
+    }
+
+    public void setLastname(String newLastname) {
+        this.lastname = newLastname;
+    }
+
+    public void setAge(int newAge) {
+        this.age = newAge;
+    }
+
+    public void setEmail(String newEmail) {
+        this.email = newEmail;
+    }
+
+    public void setScores(int[], newScores) {
+        this.scores = newScores;
+    }
+}
+
+public class Student_Roster {
+    
+}
