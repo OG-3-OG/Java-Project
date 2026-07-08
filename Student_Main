@@ -1,6 +1,12 @@
 import java.util
 public class Student_Main {
-    String[] students;
+    String[] students = {
+        "1,John,Smith,John1989@gmail.com,20,88,79,59",  
+        "2,Suzan,Erickson,Erickson_1990@gmailcom,19,91,72,85",  
+        "3,Jack,Napoli,The_lawyer99yahoo.com,19,85,84,87",  
+        "4,Erin,Black,Erin.black@comcast.net,22,91,98,82",  
+        "5,Gary,Burnette,gburn11@wgu.edu,37,100,97,98"
+    }; 
 
     public static void main(String[] args) {
     }
@@ -36,16 +42,16 @@ public class Student {
         System.out.println(firstName);
     }
 
-    public void setFirstname(String newFirstname) {
-        this.firstname = newFirstname;
+    public void setFirstName(String newFirstname) {
+        this.firstName = newFirstname;
     }
 
     public String getLastName() {
         System.out.println(lastName);
     }
 
-    public void setLastname(String newLastname) {
-        this.lastname = newLastname;
+    public void setLastName(String newLastname) {
+        this.lastName = newLastname;
     }
 
     public String getEmail() {
@@ -73,37 +79,49 @@ public class Student {
     }
 
     public void print() {
-
+        System.out.println(getStudentID()   + "\t First Name: " + getFirstName() + "\t Last Name: " + getLastName() + ",\t Email: " + getEmail() + "\t Age: " + getAge() + "\t Grades: {" + Arrays.toString(getGrades()) + "}");
     }
 }
+
 
 public class Student_Roster {
     private ArrayList<Student> classRoster = new ArrayList<>();
 
-    Student s = new Student();
-
-    public void add(String studentID, String firstname, String lastname, String email, int age, int grade1, int grade2, int grade3) {
-        s.setStudentID(studentID);
-        s.setFirstname(firstname);
-        s.setLastname(lastname);
-        s.setEmail(email);
-        s.setAge(age);
-        s.setScores(grade1, grade2, grade3);
+    public void add(String studentID, String firstName, String lastName, String email, int age, int[] grades) {
+        setStudentID(studentID);
+        setFirstName(firstName);
+        setLastName(lastName);
+        setEmail(email);
+        setAge(age);
+        setGrades(grades);
     }
 
     public void remove(String studentID) {
-
+        if (classRoster.contains(studentID)) {
+            classRoster.remove(studentID);
+        } else {
+            System.out.println("Student with ID " + studentID + " not found.");
+        }
     }
 
     public void print_all() {
+        for (Student s : classRoster) {
 
     }
 
-    public void print_average_grade(String s) {
-
+    public void print_average_grade(String studentID) {
+        int[] grades = classRoster.get(studentID).getGrades();
+        double average = Arrays.stream(grades).average().orElse(0.0);
+        System.out.println("Average grade for student " + studentID + ": " + average);
     }
 
     public void print_invalid_emails() {
+        for (Student s : classRoster) {
+            String email = s.getEmail();
+            if (!email.contains("@") || !email.contains(".") || email.contains(" ")) {
+                System.out.println("Invalid email: " + email);
+            }
+        }
 
     }
 }
