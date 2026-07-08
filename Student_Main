@@ -1,4 +1,5 @@
 import java.util
+
 public class Student_Main {
     String[] students = {
         "1,John,Smith,John1989@gmail.com,20,88,79,59",  
@@ -106,7 +107,8 @@ public class Student_Roster {
 
     public void print_all() {
         for (Student s : classRoster) {
-
+            s.print();
+        }
     }
 
     public void print_average_grade(String studentID) {
