@@ -30,7 +30,6 @@ public class Student {
         this.grades = grades;
     }
 
-
     public int getStudentID() {
         System.out.println(studentID);
     }
